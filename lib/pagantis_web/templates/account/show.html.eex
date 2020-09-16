@@ -1,0 +1,32 @@
+<h1>Show Account</h1>
+
+<ul>
+  <li>
+    <strong>Iban:</strong>
+    <%= @account.iban %>
+  </li>
+
+  <li>
+    <strong>Bank:</strong>
+    <%= @bank.name %>
+  </li>
+  
+  <li>
+    <strong>Amount:</strong>
+    <%= @account.amount %>
+  </li>
+
+  <li>
+    <strong>Created at:</strong>
+    <%= @account.inserted_at %>
+  </li>
+
+  <li>
+    <strong>Last update:</strong>
+    <%= @account.updated_at %>
+  </li>
+</ul>
+
+<span><%= link "Make a transaction", to: Routes.transaction_path(@conn, :new, account_id: @account.id) %></span>
+<br />
+<span><%= link "Back", to: Routes.account_path(@conn, :index) %></span>

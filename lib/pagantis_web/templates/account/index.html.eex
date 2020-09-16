@@ -1,0 +1,25 @@
+<h1>Listing Accounts</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Iban</th>
+      <th>Amount</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+  <%= for account <- @accounts do %>
+    <tr>
+      <td><%= account.iban %></td>
+      <td><%= account.amount %></td>
+      <td>
+        <span><%= link "Show in detail", to: Routes.account_path(@conn, :show, account) %></span><br />
+        <span><%= link "Make a transaction", to: Routes.transaction_path(@conn, :new, account_id: account.id) %></span>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Account", to: Routes.account_path(@conn, :new) %></span>

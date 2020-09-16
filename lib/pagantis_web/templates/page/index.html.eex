@@ -1,0 +1,21 @@
+<section class="row">
+  <article class="column">
+    <%= if Pow.Plug.current_user(@conn) do %>
+      <h2>What you can do</h2>
+      <ul>
+        <li>
+          <%= link "See my personal accounts", to: "/accounts"%>
+        </li>
+        <li>
+          <%= link "See my transactions", to: "/transactions"%>
+        </li>
+        <li>
+          <%= link "Create new account", to: "/accounts/new"%>
+        </li>
+      </ul>
+    <% else %>
+      <p class="pagantis-title-index">With Pagantis, you can buy what you love today and pay in flexible instalments. 100% online, instant & paperless.</p>
+      <p class="pagantis-subtitle-index">Please <%= link "sign in", to: Routes.pow_session_path(@conn, :new)%> or <%= link "register", to: Routes.pow_registration_path(@conn, :new)%> yourself to start using Pagantis.</p>
+    <% end %>
+  </article>
+</section>

@@ -1,0 +1,13 @@
+<h1>Show Bank</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @bank.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.bank_path(@conn, :edit, @bank) %></span>
+<span><%= link "Back", to: Routes.bank_path(@conn, :index) %></span>

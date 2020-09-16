@@ -1,0 +1,21 @@
+<h1>Listing Transactions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Destination Account</th>
+      <th>Amount</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for transaction <- @transactions do %>
+    <tr>
+      <td><%= transaction.iban %></td>
+      <td><%= transaction.amount %></td>
+      <td><%= transaction.inserted_at %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+<%= link "Back", to: "/"%>
